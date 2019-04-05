@@ -7,6 +7,6 @@ module.exports = {
         },
         email: '[name="email"]',
         password: 'input[name="password"]',
-        loginBtn: '[type="submit"]',
+        login: '[type="submit"]',
     },
 }
