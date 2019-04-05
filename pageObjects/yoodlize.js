@@ -8,5 +8,6 @@ module.exports = {
         emailInput: 'input[name="email"]',
         passwordInput: 'input[name="password"]',
         loginButton: 'input[type="submit"]',
+        searchBox: 'input[placeholder="Search for an Item"]',
     },
 }
