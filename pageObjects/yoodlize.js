@@ -5,8 +5,8 @@ module.exports = {
             selector: '//*[contains(text(),"Log in")]',
             locateStrategy: 'xpath'
         },
-        email: '[name="email"]',
+        email: 'input[name="email"]',
         password: 'input[name="password"]',
-        loginBtn: '[type="submit"]',
+        loginButton: '[type="submit"]',
     },
 }
