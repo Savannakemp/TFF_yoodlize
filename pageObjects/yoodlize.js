@@ -14,6 +14,6 @@ module.exports = {
         searchCityBox: 'input[placeholder="Enter your city"]',
         advancedSearch: { selector: '//*[contains(text(), "Advanced search")]', locateStrategy: 'xpath' },
         searchButton: { selector: '//button[contains(text(), "Search")]', locateStrategy: 'xpath' },
-        
+        gotItButton: {selector: '//button[text()="Got it"]', locateStrategy: 'xpath'},
     },
 }
