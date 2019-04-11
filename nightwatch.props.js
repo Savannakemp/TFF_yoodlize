@@ -1,6 +1,6 @@
 module.exports = {
-    resourcePath: "/Users/ajlarson/DevMtn/testing-resources/",
+    resourcePath: "C:\\Users\\tayme\\OneDrive\\Desktop\\DevMtn-Automation\\Testing-Resources\\",
     seleniumServer: "selenium-server-standalone-3.141.59.jar",
-    chromedriver: "chromedriver",
-    geckodriver: "geckodriver"
+    chromedriver: "chromedriver.exe",
+    geckodriver: "geckodriver.exe"
 }
