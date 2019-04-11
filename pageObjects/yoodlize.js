@@ -1,3 +1,25 @@
+var renterCommands = {
+    
+        //Rent item - Stin
+        rentAnItem: function (date, duration, message, name, ccnumber, cvv, month, year)
+            {this
+                .click('@itemToRent')
+                .waitForElementvisible('@dateInput')
+                .click('@dateInput')
+                .setValue('@dateInput', date)
+                .setValue('@durationInput', duration)
+                .click('@requestButton')
+                .waitForElementvisible('@crediCard')
+                .setValue('@messageBox', message)
+                .setValue('@creditName', name)
+                .setValue('@creidtNumber', ccnumber)
+                .setValue('@creditCvv', cvv)
+                .setValue('@creditMonth', month)
+                .setValue('@creditYear', year)
+                .click('@sendRequest')
+            return this
+            }
+        }
 var customCommands = {
     search: function (search1, search2){
         this
@@ -114,7 +136,7 @@ var userCommands = {
 
 module.exports = {
     url: 'https://alpha.yoodlize.com/',
-    commands: [customCommands, userCommands],
+    commands: [customCommands, userCommands, renterCommands],
     elements: {
         //selects the header of the popup message
         // popupMsg: {
@@ -289,6 +311,21 @@ module.exports = {
         //Closes popups
         closeBtn: 'button.close',
         logoutBtn: '.navbar-right .open form[action="/logout"]',
+
+        //Renting item selectors - Stin
+        //itemToRent: { selector: '//div[div="Bulb Planter"]', locateStrategy: 'xpath' },
+        itemToRent: { selector: '//*[div="Fish Tape"]', locateStrategy: 'xpath' },
+        dateInput: { selector: '//*[@id="date"]', locateStrategy: 'xpath' },
+        durationInput: { selector: '//*[@placeholder="1"]', locateStrategy: 'xpath' },
+        requestButton: { selector: '//button[contains(text(), "Start Request")]', locateStrategy: 'xpath' },
+        creditCard: 'input[name="paymentType"]',
+        messageBox: { selector: '//*[@name="message"]', locateStrategy: 'xpath' },
+        creditName: { selector: '//*[@name="name"]', locateStrategy: 'xpath' },
+        creditNumber: { selector: '//*[@name="cardNumber"]', locateStrategy: 'xpath' },
+        creditCvv: { selector: '//*[@name="cvv"]', locateStrategy: 'xpath' },
+        creditMonth: { selector: '//*[@name="expiryDate"]', locateStrategy: 'xpath' },
+        creditYear: { selector: '//*[@name="expiryYear"]', locateStrategy: 'xpath' },
+        sendRequest: { selector: '//div/button[contains(text(), "Send reservation request")]', locateStrategy: 'xpath' },
 
     },
 }
