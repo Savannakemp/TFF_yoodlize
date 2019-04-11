@@ -1,3 +1,5 @@
 nightwatch.props.js
 *.log
 tests_output/
+tests.js
+userFun.js
