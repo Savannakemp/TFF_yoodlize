@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var customCommands = {
     search: function (search1, search2){
         this
@@ -50,9 +49,9 @@ var customCommands = {
             .pause(1000)
             .verify.containsText('@advancedSearchCategory', advanced2), "Element is Present!"
         return this
-    },
+    }
+}
 
-=======
 var userCommands = {
     //checks multiple links to signup/login and signs up
     signup: function (firstName, lastName, email, password) {
@@ -111,16 +110,11 @@ var userCommands = {
             .assert.visible('@acctBtn')
         return this
     },
->>>>>>> 6262bc047abf636aa831daf96ed5919b1f0bff89
 }
 
 module.exports = {
     url: 'https://alpha.yoodlize.com/',
-<<<<<<< HEAD
-    commands: [customCommands],
-=======
-    commands: [userCommands],
->>>>>>> 6262bc047abf636aa831daf96ed5919b1f0bff89
+    commands: [customCommands, userCommands],
     elements: {
         //selects the header of the popup message
         // popupMsg: {
@@ -250,17 +244,13 @@ module.exports = {
         //login and account creation selectors
         emailInput: 'input[name="email"]',
         passwordInput: 'input[name="password"]',
-<<<<<<< HEAD
         loginButton: 'input[type="submit"]',
         //search function selectors
         searchBox: 'input[placeholder="Search for an item"]',
         searchConfirm: { selector: '(//div/button)[2]', locateStrategy: 'xpath' },
-=======
         gotItButton: { selector: '//button[text()="Got it"]', locateStrategy: 'xpath' },
         loginBtn: 'button[type="submit"]',
         //search selectors
-        searchBox: 'input[placeholder="Search for an Item"]',
->>>>>>> 6262bc047abf636aa831daf96ed5919b1f0bff89
         searchLink: { selector: '//div/span[contains(text(), "Search")]', locateStrategy: 'xpath' },
         searchHereBox: 'input[placeholder="Search here.."]',
         searchCityBox: 'input[placeholder="Enter your city"]',
@@ -268,10 +258,7 @@ module.exports = {
         searchResult: { selector: '(//div[@id="card-title"])[1]', locateStrategy: 'xpath'},
         advancedSearch: { selector: '//*[contains(text(), "Advanced search")]', locateStrategy: 'xpath' },
         searchButton: { selector: '//button[contains(text(), "Search")]', locateStrategy: 'xpath' },
-<<<<<<< HEAD
         advancedSearchCategory: { selector: '//div/div[contains(text(), "category")]', locateStrategy: 'xpath' },
-=======
->>>>>>> 6262bc047abf636aa831daf96ed5919b1f0bff89
         //Id nav menu selector
         acctBtn: '#basic-nav-dropdown',
         //Edit profile selectors
@@ -282,7 +269,6 @@ module.exports = {
         yearSel: 'select[name="year"]',
         locationInput: 'input[name="location"]',
         bioInput: 'textarea[name="info"]',
-<<<<<<< HEAD
         //Advanced Search Selectors
         clothing: { selector: '(//ins[@class="iCheck-helper"]) [1]', locateStrategy: 'xpath'},
         sportingGoods: { selector: '(//ins[@class="iCheck-helper"]) [2]', locateStrategy: 'xpath'},
@@ -300,11 +286,9 @@ module.exports = {
         experiences: { selector: '(//ins[@class="iCheck-helper"]) [14]', locateStrategy: 'xpath'},
         misc: { selector: '(//ins[@class="iCheck-helper"]) [15]', locateStrategy: 'xpath'},
         clearButton: { selector: '//*[contains(text(), "Clear all")]', locateStrategy: 'xpath'},
-=======
         //Closes popups
         closeBtn: 'button.close',
         logoutBtn: '.navbar-right .open form[action="/logout"]',
->>>>>>> 6262bc047abf636aa831daf96ed5919b1f0bff89
 
     },
 }
