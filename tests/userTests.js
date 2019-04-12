@@ -1,5 +1,7 @@
 var yoodlizePOM = {}
 var yoodlizeFun = require('../testAssets/userFun')
+//change this prior to running these tests
+var email = 'Blutoothi9@confirm.com'
 
 module.exports = {
     beforeEach: browser => {
@@ -12,20 +14,18 @@ module.exports = {
         yoodlizePOM.end()
     },
 
-    // //Create New User - Check that no user logged in & new user logged in when complete
-    // 'Create new user': browser => {
-    //     yoodlizePOM
-    //     //email value needs updated prior to each test.
-    //     .signup('Hugh','Atchinson','Blutoothi8@co.com','Trial123')
-    //     //need to automate completing the new user popup and logging out?
-    // },
+    //Create New User - Check that no user logged in & new user logged in when complete
+    'Create new user': browser => {
+        yoodlizePOM
+        //email value needs updated prior to each test.
+        .signup('Hugh','Atchinson',email,'Trial123')
+        //need to automate completing the new user popup and logging out?
+    },
 
     //Login With New User - Verify that User is logged in
     'Login and verify status': browser => {
-        yoodlizePOM
             // .login('UnobtainableMaster@maildrop.cc', 'Trial123')
-            yoodlizeFun(yoodlizePOM, 'UnobtainableMaster@maildrop.cc','Trial123')
-            yoodlizeFun(yoodlizeFun, )
+            yoodlizeFun(yoodlizePOM, email, 'Trial123')
             
     },
 
