@@ -13,7 +13,7 @@ module.exports = {
     //Data for renting an item
     'Renting an item': ()=> {
         yoodlize
-            .login('UnobtainableMaster@maildrop.cc', 'Trail123')
+            .login('tst4ct7@gmail.com', 'Trial123')
             .rentAnItem('04/20/2019', '1', 'I want to rent this.', 'Billy Bob',
             '4242424242424242', '555', '09', '2019')
     },

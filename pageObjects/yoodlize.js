@@ -3,20 +3,23 @@ var renterCommands = {
         //Rent item - Stin
         rentAnItem: function (date, duration, message, name, ccnumber, cvv, month, year)
             {this
+                .pause(3000)
                 .click('@itemToRent')
-                .waitForElementvisible('@dateInput')
+                .waitForElementVisible('@dateInput')
                 .click('@dateInput')
                 .setValue('@dateInput', date)
                 .setValue('@durationInput', duration)
                 .click('@requestButton')
-                .waitForElementvisible('@crediCard')
+                .pause(3000)
                 .setValue('@messageBox', message)
                 .setValue('@creditName', name)
-                .setValue('@creidtNumber', ccnumber)
+                .setValue('@creditNumber', ccnumber)
                 .setValue('@creditCvv', cvv)
                 .setValue('@creditMonth', month)
                 .setValue('@creditYear', year)
+                .pause(3000)
                 .click('@sendRequest')
+                .waitForElementPresent('@requestSent')
             return this
             }
         }
@@ -313,8 +316,7 @@ module.exports = {
         logoutBtn: '.navbar-right .open form[action="/logout"]',
 
         //Renting item selectors - Stin
-        //itemToRent: { selector: '//div[div="Bulb Planter"]', locateStrategy: 'xpath' },
-        itemToRent: { selector: '//*[div="Fish Tape"]', locateStrategy: 'xpath' },
+        itemToRent: { selector: '//*[div="Pipe Cutter"]', locateStrategy: 'xpath' },
         dateInput: { selector: '//*[@id="date"]', locateStrategy: 'xpath' },
         durationInput: { selector: '//*[@placeholder="1"]', locateStrategy: 'xpath' },
         requestButton: { selector: '//button[contains(text(), "Start Request")]', locateStrategy: 'xpath' },
@@ -325,7 +327,8 @@ module.exports = {
         creditCvv: { selector: '//*[@name="cvv"]', locateStrategy: 'xpath' },
         creditMonth: { selector: '//*[@name="expiryDate"]', locateStrategy: 'xpath' },
         creditYear: { selector: '//*[@name="expiryYear"]', locateStrategy: 'xpath' },
-        sendRequest: { selector: '//div/button[contains(text(), "Send reservation request")]', locateStrategy: 'xpath' },
+        sendRequest: 'button[class="Payment-button-2Py7x Payment-btnPrimary-Ydh2n Payment-btnlarge-1FVRM btn btn-default"]',
+        requestSent: { selector: '//*[div="Request Sent"]', locateStrategy: 'xpath' },
 
     },
 }
