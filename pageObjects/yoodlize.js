@@ -1,39 +1,39 @@
 var renterCommands = {
-    
-        //Rent item - Stin
-        rentAnItem: function (date, duration, message, name, ccnumber, cvv, month, year)
-            {this
-                .pause(3000)
-                .click('@itemToRent')
-                .waitForElementVisible('@dateInput')
-                .click('@dateInput')
-                .setValue('@dateInput', date)
-                .setValue('@durationInput', duration)
-                .click('@requestButton')
-                .pause(3000)
-                .setValue('@messageBox', message)
-                .setValue('@creditName', name)
-                .setValue('@creditNumber', ccnumber)
-                .setValue('@creditCvv', cvv)
-                .setValue('@creditMonth', month)
-                .setValue('@creditYear', year)
-                .pause(3000)
-                .click('@sendRequest')
-                .waitForElementPresent('@requestSent')
-            return this
-            }
-        }
+
+    //Rent item - Stin
+    rentAnItem: function (date, duration, message, name, ccnumber, cvv, month, year) {
+        this
+            .pause(3000)
+        .click('@itemToRent')
+        .waitForElementVisible('@dateInput')
+        .click('@dateInput')
+        .setValue('@dateInput', date)
+        .setValue('@durationInput', duration)
+        .click('@requestButton')
+        .pause(3000)
+        .setValue('@messageBox', message)
+        .setValue('@creditName', name)
+        .setValue('@creditNumber', ccnumber)
+        .setValue('@creditCvv', cvv)
+        .setValue('@creditMonth', month)
+        .setValue('@creditYear', year)
+        .pause(3000)
+        .click('@sendRequest')
+        .waitForElementPresent('@requestSent')
+        return this
+    }
+}
 var customCommands = {
-    search: function (search1, search2){
+    search: function (search1, search2) {
         this
             //search for an item from homepage, using search box
             .setValue('@searchBox', search1)
             .click('@searchConfirm')
             .waitForElementPresent('@searchKeyword', 5000)
-            .verify.containsText('@searchKeyword', search1)     
-            .verify.containsText('@searchResult', search1, 'Search is good!') 
+            .verify.containsText('@searchKeyword', search1)
+            .verify.containsText('@searchResult', search1, 'Search is good!')
             .pause(1000)
-        this    
+        this
             //search for an item using searchlink
             .clearValue('@searchHereBox')
             .click('@searchLink')
@@ -49,7 +49,7 @@ var customCommands = {
             .click('//*[contains(text(), "keyword")]/div')
         return this
     },
-    advancedSearch: function (advanced1, advanced2){
+    advancedSearch: function (advanced1, advanced2) {
         this
             //test of 'clear all' button
             .waitForElementPresent('@searchLink')
@@ -265,6 +265,14 @@ module.exports = {
             selector: '//button[contains(text(),"Save")]',
             locateStrategy: 'xpath'
         },
+        acctNavBtn: {
+            selector: '//div[contains(text(),"Account")',
+            locateStrategy: 'xpath'
+        },
+        profileNavBtn: {
+            selector: '//div[contains(text(),"Account")]//..//..//..//div[4]//a//div',
+            locateStrategy: 'xpath'
+        },
 
         //login and account creation selectors
         emailInput: 'input[name="email"]',
@@ -280,7 +288,7 @@ module.exports = {
         searchHereBox: 'input[placeholder="Search here.."]',
         searchCityBox: 'input[placeholder="Enter your city"]',
         searchKeyword: { selector: '//*[contains(text(), "keyword")]', locateStrategy: 'xpath' },
-        searchResult: { selector: '(//div[@id="card-title"])[1]', locateStrategy: 'xpath'},
+        searchResult: { selector: '(//div[@id="card-title"])[1]', locateStrategy: 'xpath' },
         advancedSearch: { selector: '//*[contains(text(), "Advanced search")]', locateStrategy: 'xpath' },
         searchButton: { selector: '//button[contains(text(), "Search")]', locateStrategy: 'xpath' },
         advancedSearchCategory: { selector: '//div/div[contains(text(), "category")]', locateStrategy: 'xpath' },
@@ -295,22 +303,22 @@ module.exports = {
         locationInput: 'input[name="location"]',
         bioInput: 'textarea[name="info"]',
         //Advanced Search Selectors
-        clothing: { selector: '(//ins[@class="iCheck-helper"]) [1]', locateStrategy: 'xpath'},
-        sportingGoods: { selector: '(//ins[@class="iCheck-helper"]) [2]', locateStrategy: 'xpath'},
-        homeAndKitchen: { selector: '(//ins[@class="iCheck-helper"]) [3]', locateStrategy: 'xpath'},
-        outdoorGear: { selector: '(//ins[@class="iCheck-helper"]) [4]', locateStrategy: 'xpath'},
-        electronics: { selector: '(//ins[@class="iCheck-helper"]) [5]', locateStrategy: 'xpath'},
-        tools: { selector: '(//ins[@class="iCheck-helper"]) [6]', locateStrategy: 'xpath'},
-        toysAndGames: { selector: '(//ins[@class="iCheck-helper"]) [7]', locateStrategy: 'xpath'},
-        partyEquipment: { selector: '(//ins[@class="iCheck-helper"]) [8]', locateStrategy: 'xpath'},
-        businessEquipment: { selector: '(//ins[@class="iCheck-helper"]) [9]', locateStrategy: 'xpath'},
-        localExperts: { selector: '(//ins[@class="iCheck-helper"]) [10]', locateStrategy: 'xpath'},
-        recreationalVehicles: { selector: '(//ins[@class="iCheck-helper"]) [11]', locateStrategy: 'xpath'},
-        venues: { selector: '(//ins[@class="iCheck-helper"]) [12]', locateStrategy: 'xpath'},
-        lawnAndGarden: { selector: '(//ins[@class="iCheck-helper"]) [13]', locateStrategy: 'xpath'},
-        experiences: { selector: '(//ins[@class="iCheck-helper"]) [14]', locateStrategy: 'xpath'},
-        misc: { selector: '(//ins[@class="iCheck-helper"]) [15]', locateStrategy: 'xpath'},
-        clearButton: { selector: '//*[contains(text(), "Clear all")]', locateStrategy: 'xpath'},
+        clothing: { selector: '(//ins[@class="iCheck-helper"]) [1]', locateStrategy: 'xpath' },
+        sportingGoods: { selector: '(//ins[@class="iCheck-helper"]) [2]', locateStrategy: 'xpath' },
+        homeAndKitchen: { selector: '(//ins[@class="iCheck-helper"]) [3]', locateStrategy: 'xpath' },
+        outdoorGear: { selector: '(//ins[@class="iCheck-helper"]) [4]', locateStrategy: 'xpath' },
+        electronics: { selector: '(//ins[@class="iCheck-helper"]) [5]', locateStrategy: 'xpath' },
+        tools: { selector: '(//ins[@class="iCheck-helper"]) [6]', locateStrategy: 'xpath' },
+        toysAndGames: { selector: '(//ins[@class="iCheck-helper"]) [7]', locateStrategy: 'xpath' },
+        partyEquipment: { selector: '(//ins[@class="iCheck-helper"]) [8]', locateStrategy: 'xpath' },
+        businessEquipment: { selector: '(//ins[@class="iCheck-helper"]) [9]', locateStrategy: 'xpath' },
+        localExperts: { selector: '(//ins[@class="iCheck-helper"]) [10]', locateStrategy: 'xpath' },
+        recreationalVehicles: { selector: '(//ins[@class="iCheck-helper"]) [11]', locateStrategy: 'xpath' },
+        venues: { selector: '(//ins[@class="iCheck-helper"]) [12]', locateStrategy: 'xpath' },
+        lawnAndGarden: { selector: '(//ins[@class="iCheck-helper"]) [13]', locateStrategy: 'xpath' },
+        experiences: { selector: '(//ins[@class="iCheck-helper"]) [14]', locateStrategy: 'xpath' },
+        misc: { selector: '(//ins[@class="iCheck-helper"]) [15]', locateStrategy: 'xpath' },
+        clearButton: { selector: '//*[contains(text(), "Clear all")]', locateStrategy: 'xpath' },
         //Closes popups
         closeBtn: 'button.close',
         logoutBtn: '.navbar-right .open form[action="/logout"]',

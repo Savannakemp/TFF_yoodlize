@@ -1,7 +1,8 @@
 var yoodlizePOM = {}
 var yoodlizeFun = require('../testAssets/userFun')
+var yoodlizeEdit = require('../testAssets/editUser')
 //change this prior to running these tests
-var email = 'Blutoothi9@confirm.com'
+var email = 'Blutoothi300@confirm.com'
 
 module.exports = {
     beforeEach: browser => {
@@ -14,27 +15,30 @@ module.exports = {
         yoodlizePOM.end()
     },
 
-    //Create New User - Check that no user logged in & new user logged in when complete
-    'Create new user': browser => {
-        yoodlizePOM
-        //email value needs updated prior to each test.
-        .signup('Hugh','Atchinson',email,'Trial123')
-        //need to automate completing the new user popup and logging out?
-    },
+    // //Create New User - Check that no user logged in & new user logged in when complete
+    // 'Create new user': browser => {
+    //     yoodlizePOM
+    //     //email value needs updated prior to each test.
+    //     .signup('Hugh','Atchinson',email,'Trial123')
+    //     //need to automate completing the new user popup and logging out?
+    // },
 
     //Login With New User - Verify that User is logged in
     'Login and verify status': browser => {
-            // .login('UnobtainableMaster@maildrop.cc', 'Trial123')
-            yoodlizeFun(yoodlizePOM, email, 'Trial123')
-            
+            yoodlizePOM.login('UnobtainableMaster@maildrop.cc', 'Trial123')
+            // yoodlizeFun(yoodlizePOM, email, 'Trial123')
+            yoodlizeEdit(yoodlizePOM, 'Timmothy', 'Stark', 3, 3, 1980, 'Sessame Street','I like long walks')
     },
 
-    //Modify User Password - Verify that Password modified
+    //Modify User Password - Verify that Password modified (done manually)
+
 
     //Edit account details - Verify that account details modified
 
-    //Edit Photo - Verify photo modified (Try Large / Med / Small / Gif / Other)
+
+    //Edit Photo - Verify photo modified (Try Large / Med / Small / Gif / Other) (done manually)
+
 
     //Verify e-mails received?? and Respond?? Account Recovery/ Verify Email/ Connect via G-mail / FB -- Stretch
-
+//---------------------------------------------------------------------------------------------------------------
 }
